@@ -110,6 +110,7 @@ The sidebar and footer can display links to social media profiles.
 
 -   `socialLinks.xUrl`: URL to a X (Twitter) profile.
 -   `socialLinks.facebookUrl`: URL to a Facebook profile.
+-   `socialLinks.discordUrl`: URL to a Facebook profile.
 -   `socialLinks.linkedinUrl`: URL to a LinkedIn profile.
 
 ## Tracks and other session categories

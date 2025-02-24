@@ -11,6 +11,20 @@
 <label id="{{ $labelId }}" class="sr-only">{{ $input.ariaLabel }}</label>
 
 <ul class="social-links" aria-labelledby="{{ $labelId }}">
+
+    {{- if $input.discordUrl}}
+        <li class="social-links__menu-item">
+            <a
+                href="{{- $input.discordUrl}}"
+                aria-label="Discord"
+                rel="external"
+                class="social-links__link {{ $input.linkClass }}">
+                {{- partial "graphics/social/discord.html" }}
+            </a>
+        </li>
+    {{ end }}
+
+
     {{- if $input.linkedinUrl }}
         <li class="social-links__menu-item">
             <a
