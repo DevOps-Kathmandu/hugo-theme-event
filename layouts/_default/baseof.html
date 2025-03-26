@@ -182,6 +182,8 @@
         <footer class="section-container">
             <section class="section section--short page-footer-section">
                 <div class="page-footer-section__start">
+                    <!-- Only show this if multiple languages is present -->
+                    {{ if gt (len .Site.Languages) 1 }}
                     <!-- Label for assistive technologies only -->
                     <label for="language-select" class="sr-only">{{ T "language_menu.label" }}</label>
                     <select id="language-select" class="select" name="language" onchange="location = this.value;">
@@ -195,7 +197,7 @@
                             </option>
                         {{ end }}
                     </select>
-
+                    {{ end }}
                     {{- partial "social-links.html" (
                         dict
                         "discordUrl" .Site.Params.themes.event.socialLinks.discordUrl
