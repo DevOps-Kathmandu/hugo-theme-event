@@ -19,8 +19,8 @@
         "subtitle" .Site.Params.themes.event.slogan
         "description" .Site.Params.themes.event.description
         "logo" .Site.Params.themes.event.images.logo
-        "numberOfSpeakers" ((where .Site.RegularPages "Section" "speakers") | len)
-        "numberOfSessions" (where (where .Site.RegularPages "Section" "sessions") "Params.isServiceSession" false | len)
+        "numberOfSpeakers" 10
+        "numberOfSessions" 7
         "numberOfDays" (div (sub (add $eventEndDate.Unix $dayInSeconds) $eventStartDate.Unix) $dayInSeconds)
         "location" .Site.Params.themes.event.location )
     }}
