@@ -1,38 +1,83 @@
 .sponsor-card {
-    width: 16.875rem;
-    height: 16.875rem;
-    padding: 0.5rem;
+    width: 16rem; /* 320px - Keep the same size */
+    height: 16rem; /* 320px - Keep the same size */
+    padding: 1.5rem; /* 24px - Keep the same padding */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content vertically and horizontally */
-    border-radius: 0.3125rem;
-    border: 0.0625rem solid var(--color-primary);
+    justify-content: flex-start; /* Shift content toward the top */
+    border-radius: 0.3125rem; /* 5px */
+    border: 0.0625rem solid var(--color-primary); /* 1px border */
     box-shadow:
         0 0 0 0 var(--color-primary),
-        0 0.0625rem 0.1875rem var(--color-shadow);
-    transition: box-shadow 0.3s ease;
+        0 0.0625rem 0.1875rem var(--color-shadow); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover and active */
+    background-color: var(--color-background, #fff); /* Ensure a background color */
 }
 
+/* Hover effect for desktop devices */
 .sponsor-card:hover {
     box-shadow:
         0 0 0 0.1875rem var(--color-primary),
-        0 0.0625rem 0.1875rem var(--color-shadow);
+        0 0.0625rem 0.1875rem var(--color-shadow); /* Enhanced shadow on hover */
+    transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Active effect for mobile devices (triggered on tap) */
+.sponsor-card:active {
+    box-shadow:
+        0 0 0 0.1875rem var(--color-primary),
+        0 0.0625rem 0.1875rem var(--color-shadow); /* Same shadow as hover */
+    transform: scale(1.05); /* Same scale effect as hover */
 }
 
 .sponsor-card__link {
-    all: unset;
+    all: unset; /* Remove default link styles */
     display: flex;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    flex-direction: column; /* Stack type and logo vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align content toward the top */
     width: 100%;
     height: 100%;
     cursor: pointer;
+    text-align: center; /* Ensure text is centered */
+}
+
+.sponsor-card__type {
+    font-size: larger; /* 24px - Keep the same */
+    font-weight: 200; /* Slightly bold for emphasis */
+    margin-bottom: 1rem; /* 8px - Reduced to move text higher */
+    margin-top: 1rem; /* 16px - Add top margin to push text down slightly from the very top */
+    color: var(--color-primary-darker, #333); /* Ensure text color is defined */
+    line-height: 1.2; /* Improve readability */
+    text-transform: uppercase; /* Transform text to all caps */
 }
 
 .sponsor-card__logo {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%; /* Increased from 70% to make the logo bigger */
+    max-height: 60%; /* Increased from 50% to make the logo bigger */
     object-fit: contain; /* Scale logo to fit within its container */
+    width: auto; /* Allow natural width within max-width */
+    height: auto; /* Allow natural height within max-height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sponsor-card {
+        width: 14rem; /* 224px - Adjusted for mobile */
+        height: 14rem; /* 224px - Adjusted for mobile */
+        padding: 1rem; /* 16px - Slightly reduced padding on mobile */
+    }
+
+    .sponsor-card__type {
+        font-size: 1.25rem; /* 20px - Adjusted for mobile */
+        margin-bottom: 0.25rem; /* 4px - Reduced for mobile */
+        margin-top: 0.75rem; /* 12px - Adjusted for mobile */
+    }
+
+    .sponsor-card__logo {
+        max-width: 90%; /* Slightly larger logo on mobile */
+        max-height: 70%; /* Slightly larger logo on mobile */
+    }
 }

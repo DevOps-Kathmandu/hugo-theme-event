@@ -1,13 +1,13 @@
 {{ $input := . }}
 
-
 <div class="sponsor-card">
-    <a class="sponsor-card__link" href="{{ $input.companyUrl }}">
+    <a class="sponsor-card__link" href="{{ $input.companyUrl | default $input.profileUrl }}" target="_blank" rel="noopener noreferrer">
         {{ with resources.Get $input.logoResource }}
+            <h2 class="sponsor-card__type">{{ $input.type | default $input.name }}</h2>
             <img
                 class="sponsor-card__logo"
                 src="{{ .RelPermalink }}"
-                alt="{{ $input.name }}"
+                alt="{{ $input.name }} Logo"
                 {{ if not (eq .MediaType.SubType "svg") }}
                     width="{{ .Width }}" height="{{ .Height }}"
                 {{ end }} />
