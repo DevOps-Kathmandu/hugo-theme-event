@@ -19,8 +19,8 @@
         "subtitle" .Site.Params.themes.event.slogan
         "description" .Site.Params.themes.event.description
         "logo" .Site.Params.themes.event.images.logo
-        "numberOfSpeakers" 10
-        "numberOfSessions" 7
+        "numberOfSpeakers" 12
+        "numberOfSessions" 10
         "numberOfDays" (div (sub (add $eventEndDate.Unix $dayInSeconds) $eventStartDate.Unix) $dayInSeconds)
         "location" .Site.Params.themes.event.location )
     }}
