@@ -1,7 +1,7 @@
 languages:
     en:
         languageName: English
-        disabled: true
+        disabled: False
         params:
             themes:
                 event:
@@ -113,3 +113,7 @@ params:
                 shadow: '#a6afc366'
             # 👇 Name of the category in Sessionize that is used to group sessions.
             trackCategoryTitle: Track
+            qa:
+                slidoUrl: "#"
+                slidoQrCode: "/images/slido.png"
+

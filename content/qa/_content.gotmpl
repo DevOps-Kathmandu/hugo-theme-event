@@ -1,0 +1,18 @@
+{{ .EnableAllLanguages }}
+
+{{ $context := . }}
+{{ $slidoUrl := $context.Site.Params.themes.event.qa.slidoUrl }}
+
+{{ if (or (eq $slidoUrl nil) (not $slidoUrl)) }}
+    {{ warnf "No Slido URL found for Q&A! Did you set it in the site parameters?" }}
+{{ end }}
+
+{{ $page := dict 
+    "title" (T "qa_page.heading" | default "Questions & Answers")
+    "layout" "list"
+    "path" "_index.md"  
+    "menu" (dict "main" (dict "weight" 40))
+    "date" now
+}}
+
+{{ $.AddPage $page }}
